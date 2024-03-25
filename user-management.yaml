@@ -1,0 +1,10 @@
+---
+- name: Manage user accounts
+  hosts: servers
+  tasks:
+    - name: Ensure user is present
+      user:
+        name: johndoe
+        password: <encrypted_password>
+        state: present
+        groups: sudo

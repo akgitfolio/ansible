@@ -1,0 +1,8 @@
+---
+- name: Manage services
+  hosts: servers
+  tasks:
+    - name: Ensure service is running
+      service:
+        name: ssh
+        state: started

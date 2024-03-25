@@ -1,0 +1,12 @@
+---
+- name: Harden server security
+  hosts: servers
+  tasks:
+    - name: Disable unused services
+      service:
+        name: "{{ item }}"
+        state: stopped
+        enabled: no
+      loop:
+        - telnet
+        - ftp

@@ -1,0 +1,12 @@
+---
+- name: Deploy web application
+  hosts: servers
+  tasks:
+    - name: Copy application files
+      copy:
+        src: /path/to/local/app
+        dest: /var/www/html/app
+    - name: Restart web server
+      service:
+        name: apache2
+        state: restarted

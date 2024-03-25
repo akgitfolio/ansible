@@ -1,0 +1,6 @@
+---
+- name: Manage log files
+  hosts: servers
+  tasks:
+    - name: Rotate log files
+      command: logrotate /etc/logrotate.conf

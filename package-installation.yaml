@@ -1,0 +1,11 @@
+---
+- name: Ensure packages are installed and up-to-date
+  hosts: servers
+  tasks:
+    - name: Install packages
+      package:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - package1
+        - package2

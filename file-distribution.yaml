@@ -1,0 +1,8 @@
+---
+- name: Distribute files
+  hosts: servers
+  tasks:
+    - name: Copy files
+      copy:
+        src: /path/to/local/file
+        dest: /remote/path/file

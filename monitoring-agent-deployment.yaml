@@ -1,0 +1,9 @@
+---
+- name: Deploy monitoring agent
+  hosts: servers
+  tasks:
+    - name: Install monitoring agent
+      command: wget -O /tmp/monitoring-agent.deb http://example.com/monitoring-agent.deb
+    - name: Install package
+      apt:
+        deb: /tmp/monitoring-agent.deb

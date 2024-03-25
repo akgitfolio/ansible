@@ -1,0 +1,11 @@
+---
+- name: Ensure configuration files are managed
+  hosts: servers
+  tasks:
+    - name: Copy configuration file
+      copy:
+        src: /path/to/local/config.conf
+        dest: /etc/config.conf
+        owner: root
+        group: root
+        mode: 0644

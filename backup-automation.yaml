@@ -1,0 +1,12 @@
+---
+- name: Backup files
+  hosts: servers
+  tasks:
+    - name: Create backup directory
+      file:
+        path: /backup
+        state: directory
+    - name: Backup files
+      archive:
+        path: /path/to/files
+        dest: /backup/files_backup.tar.gz
